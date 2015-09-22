@@ -1,0 +1,5 @@
+- name: Download composer.phar
+  shell: creates="composer.phar" php -r "readfile('https://getcomposer.org/installer');" | php
+
+- name: Install composer.phar
+  command: creates="/usr/local/bin/composer" mv composer.phar /usr/local/bin/composer
